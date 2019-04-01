@@ -57,7 +57,9 @@ $("#button-display").delegate(".fighter","click", function() {
         var results = response.data;
 
         for( var i = 0; i < results.length; i++){
-            
+            //rating label
+            var rating = results[i].rating;
+            var ratingLabel = $("<p>").text("Rating: " + rating);
             //putting url into dynamically created image tag
             var imageTag = $("<img>");
             //injecting the course url into the 'src' attribute of the above created img tag
@@ -65,6 +67,7 @@ $("#button-display").delegate(".fighter","click", function() {
             //injecting 'alt' attribute info
             imageTag.attr('alt', 'gif');
             //appending to the DOM
+            $("#gif-display").prepend(ratingLabel);
             $("#gif-display").prepend(imageTag);
         }
     });
