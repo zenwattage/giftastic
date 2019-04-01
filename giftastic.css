@@ -1,0 +1,22 @@
+body {
+    background-color: cornflowerblue;
+}
+
+#gif-display {
+    display: inline-flex;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+}
+
+#button-display {
+    padding-bottom: 10px;
+}
+
+
+button.fighter {
+    border-radius: 5px;
+    margin: 5px;
+    background-color: teal;
+    color: white;
+    
+}

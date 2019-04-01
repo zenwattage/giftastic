@@ -12,7 +12,7 @@ function readyCheck() {
 }
 
 //array
-var fighters = ["St. Pierre", "Lomachenko", "Tyson", "Canelo", "Golovkin","Mayweather", "Askren", "Rocky"];
+var fighters = ["St. Pierre", "Mighty Mouse Johnson","Amanda Nunes", "Lomachenko","Mayweather", "Tyson", "Canelo", "Golovkin","Khabib", "Askren","McGregor", "Rocky", "Van Damme", "John Wick", "Oberyn", "The Mountain", "Robin Hood"];
 
 
 // Function for displaying buttons
@@ -82,7 +82,7 @@ $("#submit").on("click", function(event) {
     var gifSearch = $("#searchBox").val().trim();
     
     fighters.push(gifSearch);
-
+    $("")
     makeButtons();
 
 });
