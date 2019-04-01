@@ -3,7 +3,7 @@ body {
 }
 
 #gif-display {
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
     padding-bottom: 10px;
 }
@@ -11,6 +11,13 @@ body {
 #button-display {
     padding-bottom: 10px;
 }
+
+.gif {
+
+    margin: 20px;
+
+}
+
 
 
 button.fighter {

@@ -63,15 +63,47 @@ $("#button-display").delegate(".fighter","click", function() {
             //putting url into dynamically created image tag
             var imageTag = $("<img>");
             //injecting the course url into the 'src' attribute of the above created img tag
-            imageTag.attr('src', results[i].images.fixed_height.url);
+            imageTag.attr("src", results[i].images.fixed_height.url);
+            //add data-still attr
+            imageTag.attr("data-still", results[i].images.fixed_height.url);
+            //add data-animate attr
+            imageTag.attr("data-animate", results[i].images.fixed_height.url);
+            //add data-still attr
+            imageTag.attr("data-state","still");
             //injecting 'alt' attribute info
-            imageTag.attr('alt', 'gif');
+            imageTag.addClass("gif");
+            
             //appending to the DOM
             $("#gif-display").prepend(ratingLabel);
             $("#gif-display").prepend(imageTag);
+
+            $(".gif").on("click", function() {
+                // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+                var state = $(this).attr("data-state");
+                // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+                // Then, set the image's data-state to animate
+                // Else set src to the data-still value
+                if (state === "still") {
+                  $(this).attr("src", $(this).attr("data-animate"));
+                  $(this).attr("data-state", "animate");
+                } 
+                else {
+                  $(this).attr("src", $(this).attr("data-still"));
+                  $(this).attr("data-state", "still");
+                }
+              });
         }
     });
+
+    
 });
+
+
+
+
+
+
+
 
 //search box button function
 $("#submit").on("click", function(event) {
