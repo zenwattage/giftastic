@@ -53,6 +53,7 @@ $("#button-display").delegate(".fighter","click", function() {
     url: queryURL,
     method: "GET"
     }).then(function(response) {
+        //event.preventDefault();
         
         var results = response.data;
 
